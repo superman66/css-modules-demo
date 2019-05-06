@@ -1,12 +1,21 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import styles from './style.css'
+import Demo1 from './demo1'
+import Demo2 from './demo2'
+class App extends React.Component {
+  render() {
+    return (
+      <div>
+        <h2>App.js</h2>
+        <div className="global">这是global 的样式</div>
+        <div className={styles.container}>这是局部的样式</div>
+        <div className={styles.another}>这是继承其他css文件的样式规则</div>
+        <Demo1 />
+        <Demo2 />
+      </div>
+    )
+  }
+}
 
-ReactDOM.render(<App />, document.getElementById('root'));
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+ReactDOM.render(<App />, document.getElementById('root'))

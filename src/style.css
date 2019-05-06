@@ -1,0 +1,15 @@
+:global(.global) {
+  color: green;
+  font-size: 30px;
+}
+.background {
+  background: red;
+}
+.container {
+  composes: background;
+  color: #fff;
+}
+
+.another {
+  composes: background from './another.css';
+}
