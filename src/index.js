@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import styles from './style.css'
 import Demo1 from './demo1'
 import Demo2 from './demo2'
+import Demo3 from './demo3'
 class App extends React.Component {
   render() {
     return (
@@ -13,6 +14,7 @@ class App extends React.Component {
         <div className={styles.another}>这是继承其他css文件的样式规则</div>
         <Demo1 />
         <Demo2 />
+        <Demo3 />
       </div>
     )
   }

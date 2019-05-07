@@ -2,7 +2,12 @@
   "presets": ["@babel/preset-env", "@babel/preset-react"],
   "plugins": [
     ["react-css-modules", {
-      "generateScopedName": "[path][name]__[local]--[hash:base64:5]"
+      "generateScopedName": "[path][name]__[local]--[hash:base64:5]",
+      "filetypes": {
+        ".less": {
+          "syntax": "postcss-less"
+        }
+      }
     }]
   ]
   

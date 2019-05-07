@@ -166,3 +166,39 @@ export default CSSModuleDemo1
 ```
 <div className='global-css' styleName='local-module'></div>
 ```
+
+## 使用CSS 预编译
+
+### Less
+安装 less 、less-loader 依赖
+```
+npm i less less-loader -D
+```
+
+在 `webpack.config.js` 中配置：
+```
+  module: {
+    rules: [
+      {
+        test: /\.(css|less)$/,
+        exclude: /node_modules/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              localIdentName: '[path][name]__[local]--[hash:base64:5]',
+            },
+          },
+          {
+            loader: 'less-loader',
+          },
+        ],
+      },
+    ],
+  },
+
+```
+这样就可以直接结合 less 使用 CSS Modules。
+
